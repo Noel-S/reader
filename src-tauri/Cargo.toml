@@ -1,6 +1,6 @@
 [package]
 name = "reader"
-version = "0.0.0"
+version = "1.0.0"
 description = "A Tauri App"
 authors = ["you"]
 license = ""
@@ -13,10 +13,11 @@ edition = "2021"
 tauri-build = { version = "1.2", features = [] }
 
 [dependencies]
-tauri = { version = "1.2", features = ["fs-all", "process-command-api", "shell-open"] }
+tauri = { version = "1.2", features = ["dialog-all", "fs-all", "process-command-api", "shell-execute", "shell-open", "shell-sidecar"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 csv = "1.1.6"
+reqwest = { version = "0.11", features = ["json"] }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

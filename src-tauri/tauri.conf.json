@@ -13,9 +13,17 @@
   "tauri": {
     "allowlist": {
       "all": false,
+      "dialog": {
+        "all": true
+      },
       "shell": {
         "all": false,
-        "open": true
+        "open": true,
+        "execute": true,
+        "sidecar": true,
+        "scope": [
+          { "name": "surreal", "sidecar": true, "cmd": "binaries/surreal" }
+        ]
       },
       "fs": {
         "all": true,
@@ -32,8 +40,10 @@
         "icons/icon.ico"
       ],
       "identifier": "com.noel-s.reader",
-      "targets": "all"
-      
+      "targets": "all",
+      "externalBin": [
+        "binaries/surreal"
+      ]
     },
     "security": {
       "csp": null
@@ -43,6 +53,7 @@
     },
     "windows": [
       {
+        "label": "main",
         "fullscreen": false,
         "resizable": true,
         "title": "reader",
